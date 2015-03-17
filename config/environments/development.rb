@@ -14,10 +14,19 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :test
-  host = 'rails-tutorail-siberian-taco.c9.io'
-  config.action_mailer.default_url_options = { host: host }
+      config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  #host = 'thawing-anchorage-7454.herokuapp.com'
+  #config.action_mailer.default_url_options = { host: host }
+config.action_mailer.smtp_settings = {
+      :address              => "smtp.yandex.ru",
+      :port                 => 587,
+      :domain               => "yandex.ru",
+      :user_name            => "odtoduam.viard",
+      :password             => "R22u02sk",
+      :authentication       => :plain,
+      :enable_starttls_auto => true
+}
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
