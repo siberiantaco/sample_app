@@ -53,7 +53,8 @@ VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   end
   
   def password_reset_expired?
-    reset_sent_at < 2.hours.ago
+    #reset_sent_at < 2.hours.ago
+    return true
   end
   
   private

@@ -11,11 +11,6 @@ class PasswordResetsController < ApplicationController
   end
   
   def update
-    if @user.password_reset_expired?
-      flash.now[:danger] = "Password reset has expired."
-      redirect_to new_password_reset_url
-    end 
-    
     if password_blank?
       flash.now[:danger] = "Password can't be blank"
       render 'edit'
