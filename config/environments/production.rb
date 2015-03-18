@@ -73,7 +73,7 @@ config.action_mailer.smtp_settings = {
       :port                 => 587,
       :domain               => "yandex.ru",
       :user_name      => ENV['SENDGRID_USERNAME'],
-      :password       => ENV['SENDGRID_PASSWORD'],
+      :password       => 'R22u02sk',
       :authentication       => :plain,
       :enable_starttls_auto => true
 }
