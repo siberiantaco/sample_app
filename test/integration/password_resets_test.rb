@@ -20,10 +20,9 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
                                                     
                                                   }
                                                   
-    #assert_response :redirect
+    assert_response :redirect
     #follow_redirect!
     #assert_match /expired/, response.body
-    assert_redirected_to new_password_reset_url
   end
   
   test "reset password" do

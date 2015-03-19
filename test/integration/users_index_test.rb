@@ -10,6 +10,7 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     log_in_as(@admin)
     get users_path
     assert_template 'users/index'
+    
     assert_select 'div.pagination'
     users_page = User.paginate(page: 1)
     users_page.each do |user|
