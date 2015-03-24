@@ -4,7 +4,7 @@ class Micropost < ActiveRecord::Base
   mount_uploader :picture, ::PictureUploader
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
-  validate :picture
+  validate :picture_size
   self.per_page = 10
   WillPaginate.per_page = 10
   
